@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE CAKE ROOM | Premium Home Bakery in Karachi</title>
+<meta name="description" content="THE CAKE ROOM is a premium home bakery in Karachi. Freshly baked chocolate cakes, cheesecakes, brownies, cupcakes and custom birthday cakes. Order on WhatsApp.">
+<meta name="theme-color" content="#F8F3EC">
+<meta property="og:title" content="THE CAKE ROOM | A Little Happiness in Every Bite.">
+<meta property="og:description" content="Premium homemade cakes, brownies, cupcakes and custom desserts in Karachi.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout concept: editorial single page. Cream ground, one bold move (the arched hero photo and
+   oversized serif headline), everything else quiet: soft cards, one radius, generous gaps. */
+:root {
+  --bg: #F8F3EC;        /* warm cream */
+  --primary: #8B5E4A;   /* cocoa brown */
+  --secondary: #D7A89A; /* dusty pink */
+  --ink: #49352C;       /* deep chocolate */
+  --card: #FFFDF9;      /* card background */
+  --accent: #C69B76;    /* muted caramel */
+
+  --ink-soft: rgba(73, 53, 44, 0.78);
+  --line: rgba(73, 53, 44, 0.12);
+  --shadow: 0 10px 30px -12px rgba(73, 53, 44, 0.22);
+  --shadow-hover: 0 18px 40px -14px rgba(73, 53, 44, 0.32);
+
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --r: 20px;            /* the one radius */
+  --gutter: clamp(20px, 5vw, 56px);
+  --section: clamp(72px, 10vw, 128px);
+  --nav-h: 68px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.12; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+section[id], footer[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
+
+.skip-link {
+  position: absolute; left: 16px; top: -60px; z-index: 100;
+  background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 10px; text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
+
+.wrap { width: 100%; max-width: 1240px; margin-inline: auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+.hero-grid > *, .custom-grid > *, .about-grid > *, .contact-grid > *, .cards > *, .cats > *, .benefits > *, .t-grid > *, .gallery > *, .f-grid > *, .contact-list li > div { min-width: 0; }
+h1, h2, h3, p, a, dd, blockquote { overflow-wrap: anywhere; }
+.section { padding-block: var(--section); }
+
+.eyebrow {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--primary); display: inline-flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+.section-head { display: grid; gap: 14px; max-width: 640px; margin-bottom: clamp(36px, 5vw, 56px); }
+.section-head h2 { font-size: clamp(2rem, 4.6vw, 3.1rem); }
+.section-head p { color: var(--ink-soft); }
+.section-head.center { text-align: center; margin-inline: auto; justify-items: center; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-body); font-weight: 500; font-size: 0.95rem; line-height: 1;
+  padding: 16px 26px; border-radius: 999px; border: 1.5px solid transparent;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.btn svg { width: 18px; height: 18px; flex: none; }
+@media (hover: hover) { .btn:hover { transform: translateY(-2px); } }
+.btn-primary { background: var(--primary); color: #FFFDF9; box-shadow: 0 8px 20px -10px rgba(139, 94, 74, .7); }
+.btn-primary:hover { background: var(--ink); }
+.btn-ghost { border-color: var(--primary); color: var(--primary); background: transparent; }
+.btn-ghost:hover { background: var(--primary); color: #FFFDF9; }
+.btn-light { background: var(--bg); color: var(--ink); }
+.btn-light:hover { background: var(--secondary); }
+.btn-sm { padding: 12px 20px; font-size: 0.875rem; }
+.btn-block { width: 100%; }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 50; height: var(--nav-h);
+  background: rgba(248, 243, 236, 0.92);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent; transition: border-color .25s ease, box-shadow .25s ease;
+}
+.nav.scrolled { border-color: var(--line); box-shadow: 0 6px 20px -16px rgba(73, 53, 44, .5); }
+.nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; letter-spacing: 0.12em; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.brand span { color: var(--primary); }
+.nav-links { list-style: none; margin: 0; padding: 0; display: none; gap: 32px; }
+.nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 8px 0; position: relative; color: var(--ink); }
+.nav-links a::after { content: ""; position: absolute; left: 0; bottom: 2px; width: 0; height: 1.5px; background: var(--primary); transition: width .25s ease; }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-cta { display: none; }
+.menu-btn {
+  width: 46px; height: 46px; flex: none; display: inline-grid; place-items: center; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer;
+}
+.menu-btn svg { width: 22px; height: 22px; }
+.menu-btn .i-close { display: none; }
+.menu-btn[aria-expanded="true"] .i-open { display: none; }
+.menu-btn[aria-expanded="true"] .i-close { display: block; }
+
+.drawer {
+  position: fixed; inset: var(--nav-h) 0 auto 0; z-index: 49;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  padding: 12px var(--gutter) 28px; display: grid; gap: 4px;
+  box-shadow: 0 24px 40px -24px rgba(73, 53, 44, .4);
+  max-height: calc(100vh - var(--nav-h)); max-height: calc(100dvh - var(--nav-h)); overflow-y: auto;
+  transform: translateY(-12px); opacity: 0; visibility: hidden;
+  transition: transform .25s ease, opacity .25s ease, visibility .25s;
+}
+.drawer.open { transform: none; opacity: 1; visibility: visible; }
+.drawer a.dlink { font-family: var(--font-display); font-size: 1.5rem; text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.drawer .btn { margin-top: 18px; }
+
+@media (max-width: 380px) {
+  .brand { font-size: 1rem; letter-spacing: .08em; }
+  .btn { padding: 15px 20px; white-space: normal; text-align: center; }
+  .hero-actions .btn { width: 100%; }
+  .stamp { width: 96px; height: 96px; }
+}
+@media (max-width: 560px) { .hero-actions .btn { width: 100%; } }
+
+@media (min-width: 900px) {
+  .nav-links { display: flex; }
+  .nav-cta { display: inline-flex; }
+  .menu-btn, .drawer { display: none; }
+}
+
+/* Hero */
+.hero { padding-block: clamp(36px, 6vw, 80px) var(--section); }
+.hero-grid { display: grid; gap: 48px; align-items: center; }
+.hero h1 { font-size: clamp(2.7rem, 8.4vw, 5.4rem); letter-spacing: -0.015em; margin: 20px 0 24px; }
+.hero h1 em { font-style: italic; font-weight: 500; color: var(--primary); }
+.hero-copy p.lead { font-size: 1.05rem; color: var(--ink-soft); max-width: 46ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.hero-facts { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 40px 0 0; padding: 0; list-style: none; font-size: 0.85rem; color: var(--ink-soft); }
+.hero-facts li { display: inline-flex; align-items: center; gap: 8px; }
+.hero-facts svg { width: 16px; height: 16px; color: var(--accent); }
+
+.hero-art { position: relative; max-width: 520px; width: 100%; margin-inline: auto; padding: 0 0 24px 24px; }
+.hero-art::before {
+  content: ""; position: absolute; inset: 24px 24px 0 0; border-radius: 999px 999px var(--r) var(--r);
+  background: var(--secondary); opacity: .55; z-index: 0;
+}
+.hero-photo { position: relative; z-index: 1; aspect-ratio: 4 / 5; border-radius: 999px 999px var(--r) var(--r); overflow: hidden; box-shadow: var(--shadow); background: var(--accent); }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.stamp {
+  position: absolute; z-index: 2; left: 0; bottom: 0; width: 118px; height: 118px; border-radius: 50%;
+  background: var(--card); box-shadow: var(--shadow); display: grid; place-items: center; text-align: center; padding: 12px;
+  border: 1px dashed var(--accent); outline: 6px solid var(--bg);
+}
+.stamp b { display: block; font-family: var(--font-display); font-size: 1.05rem; line-height: 1.1; color: var(--primary); }
+.stamp small { display: block; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); margin-top: 6px; }
+
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1.08fr 0.92fr; gap: clamp(40px, 6vw, 72px); }
+}
+
+/* Image fallback if a photo can't load */
+.img-box { background: linear-gradient(0deg, rgba(198,155,118,.35), rgba(215,168,154,.35)); }
+img.img-failed { visibility: hidden; }
+
+/* Favourites */
+.cards { display: grid; gap: 24px; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1020px) { .cards { grid-template-columns: repeat(4, 1fr); gap: 22px; } }
+.product {
+  background: var(--card); border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column;
+  box-shadow: var(--shadow); border: 1px solid var(--line);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.product:focus-within { box-shadow: var(--shadow-hover); }
+@media (hover: hover) { .product:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); } }
+.product .ph { aspect-ratio: 4 / 5; overflow: hidden; }
+.product .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.product:hover .ph img { transform: scale(1.04); }
+.product .body { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.product h3 { font-size: 1.3rem; }
+.price { font-weight: 600; color: var(--primary); font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.product p { font-size: .9rem; color: var(--ink-soft); flex: 1; }
+.product .btn { margin-top: 10px; }
+
+/* Menu */
+.menu-bg { background: var(--card); border-block: 1px solid var(--line); }
+.cats { display: grid; gap: 24px; }
+@media (min-width: 760px) { .cats { grid-template-columns: repeat(3, 1fr); } }
+.cat { display: flex; flex-direction: column; gap: 18px; }
+.cat .ph { aspect-ratio: 4 / 3; border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow); }
+.cat .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.cat:hover .ph img { transform: scale(1.04); }
+.cat h3 { font-size: 1.55rem; }
+.cat p { color: var(--ink-soft); font-size: .95rem; }
+.link-arrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; font-size: .9rem; color: var(--primary); text-decoration: none; border-bottom: 1.5px solid var(--accent); padding-bottom: 3px; width: fit-content; transition: gap .2s ease, color .2s ease; }
+.link-arrow svg { width: 16px; height: 16px; }
+.link-arrow:hover { gap: 12px; color: var(--ink); }
+
+/* Custom orders */
+.custom { background: var(--ink); color: var(--bg); }
+.custom-grid { display: grid; gap: 44px; align-items: center; }
+.custom .eyebrow { color: var(--secondary); }
+.custom .eyebrow::before { background: var(--secondary); }
+.custom h2 { font-size: clamp(2.1rem, 5vw, 3.4rem); margin: 18px 0 20px; }
+.custom h2 em { color: var(--secondary); font-style: italic; font-weight: 500; }
+.custom p { color: rgba(248, 243, 236, .82); max-width: 52ch; }
+.custom ul { list-style: none; padding: 0; margin: 26px 0 34px; display: grid; gap: 12px; }
+.custom li { display: flex; gap: 12px; align-items: flex-start; color: rgba(248, 243, 236, .9); }
+.custom li svg { width: 18px; height: 18px; margin-top: 4px; color: var(--accent); flex: none; }
+.custom .ph { border-radius: var(--r); overflow: hidden; aspect-ratio: 5 / 4; box-shadow: 0 20px 50px -20px rgba(0,0,0,.6); }
+.custom .ph img { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) { .custom-grid { grid-template-columns: 1.05fr .95fr; gap: 80px; } }
+
+/* About / Why */
+.about-grid { display: grid; gap: 48px; }
+@media (min-width: 900px) { .about-grid { grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: start; } .about-copy { position: sticky; top: calc(var(--nav-h) + 32px); } }
+.about-copy h2 { font-size: clamp(2rem, 4.6vw, 3.1rem); margin: 16px 0 20px; }
+.about-copy p { color: var(--ink-soft); max-width: 46ch; }
+.about-copy p + p { margin-top: 14px; }
+.benefits { display: grid; gap: 18px; }
+@media (min-width: 560px) { .benefits { grid-template-columns: repeat(2, 1fr); } }
+.benefit { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px 24px; box-shadow: var(--shadow); }
+.benefit .ic { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: rgba(215, 168, 154, .35); color: var(--primary); margin-bottom: 18px; }
+.benefit .ic svg { width: 22px; height: 22px; }
+.benefit h3 { font-size: 1.25rem; margin-bottom: 8px; }
+.benefit p { font-size: .9rem; color: var(--ink-soft); }
+
+/* Gallery */
+.gallery { display: grid; gap: 14px; grid-template-columns: repeat(2, 1fr); }
+.tile { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 1 / 1; box-shadow: var(--shadow); }
+.tile.wide { grid-column: span 2; aspect-ratio: 2 / 1; }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.tile:hover img { transform: scale(1.05); }
+@media (min-width: 600px) { .gallery { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+@media (min-width: 1000px) { .gallery { gap: 20px; } }
+
+/* Testimonials */
+.t-grid { display: grid; gap: 22px; }
+@media (min-width: 860px) { .t-grid { grid-template-columns: repeat(3, 1fr); } }
+.quote { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 30px 26px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 18px; }
+.stars { display: flex; gap: 3px; color: var(--accent); }
+.stars svg { width: 18px; height: 18px; fill: currentColor; }
+.quote blockquote { margin: 0; font-family: var(--font-display); font-size: 1.15rem; line-height: 1.5; flex: 1; }
+.quote footer { display: grid; gap: 2px; font-size: .85rem; }
+.quote footer b { font-weight: 600; }
+.quote footer span { color: var(--ink-soft); }
+.tag { display: inline-block; margin-top: 8px; width: fit-content; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; color: var(--primary); border: 1px solid var(--accent); border-radius: 999px; padding: 4px 10px; }
+.demo-note { text-align: center; margin-top: 28px; font-size: .8rem; color: var(--ink-soft); }
+
+/* Contact */
+.contact-bg { background: var(--card); border-top: 1px solid var(--line); }
+.contact-grid { display: grid; gap: 40px; }
+@media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; } }
+.contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.contact-list li { display: flex; gap: 16px; align-items: flex-start; }
+.contact-list .ic { width: 44px; height: 44px; flex: none; border-radius: 50%; background: rgba(215, 168, 154, .35); color: var(--primary); display: grid; place-items: center; }
+.contact-list .ic svg { width: 20px; height: 20px; }
+.contact-list h3 { font-family: var(--font-body); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; color: var(--primary); margin-bottom: 4px; }
+.contact-list a { text-decoration: none; border-bottom: 1px solid var(--accent); }
+.contact-list a:hover { color: var(--primary); }
+.hours { display: grid; grid-template-columns: auto 1fr; gap: 2px 18px; margin: 0; font-size: .95rem; }
+.hours dt { color: var(--ink-soft); }
+.hours dd { margin: 0; font-variant-numeric: tabular-nums; }
+.cta-card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--r); padding: clamp(28px, 5vw, 48px); box-shadow: var(--shadow); display: grid; gap: 18px; }
+.cta-card h3 { font-size: clamp(1.7rem, 3.6vw, 2.2rem); }
+.cta-card p { color: var(--ink-soft); }
+.cta-card .btn + .btn { margin-top: -4px; }
+
+/* Footer */
+.footer { background: var(--ink); color: rgba(248, 243, 236, .82); padding-block: 64px 28px; }
+.f-grid { display: grid; gap: 36px; }
+@media (min-width: 800px) { .f-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 64px; } }
+.footer .brand { color: var(--bg); font-size: 1.3rem; }
+.footer .brand span { color: var(--secondary); }
+.footer p.about { margin-top: 14px; max-width: 38ch; font-size: .9rem; }
+.footer h3 { font-family: var(--font-body); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; color: var(--accent); margin-bottom: 14px; }
+.footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.footer a { text-decoration: none; font-size: .92rem; transition: color .2s ease; }
+.footer a:hover { color: var(--secondary); }
+.f-bottom { margin-top: 48px; padding-top: 22px; border-top: 1px solid rgba(248, 243, 236, .16); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: .8rem; color: rgba(248, 243, 236, .62); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .btn:hover, .product:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Lucide icons (ISC licence), inlined as a sprite so there is no extra dependency -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" focusable="false">
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#home" aria-label="THE CAKE ROOM, back to top">THE <span>CAKE</span> ROOM</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#home" data-nav>Home</a></li>
+        <li><a href="#menu" data-nav>Our Menu</a></li>
+        <li><a href="#about" data-nav>About</a></li>
+        <li><a href="#gallery" data-nav>Gallery</a></li>
+        <li><a href="#contact" data-nav>Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta" href="#contact" data-wa="general"><svg aria-hidden="true"><use href="#i-msg"/></svg>Order Now</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <svg class="i-open" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="i-close" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-label="Mobile menu">
+  <a class="dlink" href="#home">Home</a>
+  <a class="dlink" href="#menu">Our Menu</a>
+  <a class="dlink" href="#about">About</a>
+  <a class="dlink" href="#gallery">Gallery</a>
+  <a class="dlink" href="#contact">Contact</a>
+  <a class="btn btn-primary btn-block" href="#contact" data-wa="general"><svg aria-hidden="true"><use href="#i-msg"/></svg>Order Now</a>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Freshly baked in Karachi</span>
+        <h1 id="hero-title">Made With Love, Baked With <em>Passion.</em></h1>
+        <p class="lead">Handcrafted cakes, fudgy brownies and pretty little cupcakes, baked in small batches in our home kitchen with real butter, real chocolate and a lot of patience.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#menu">Explore Our Menu <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#contact" data-wa="general"><svg aria-hidden="true"><use href="#i-msg"/></svg>Order on WhatsApp</a>
+        </div>
+        <ul class="hero-facts">
+          <li><svg aria-hidden="true"><use href="#i-flame"/></svg>Baked to order</li>
+          <li><svg aria-hidden="true"><use href="#i-sparkles"/></svg>Custom designs</li>
+          <li><svg aria-hidden="true"><use href="#i-pin"/></svg>Delivery across Karachi</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <div class="hero-photo img-box">
+          <img data-img="choc" src="https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 900px) 480px, 90vw" width="800" height="1000" alt="Mini chocolate bundt cake with glossy chocolate glaze, dried lavender and chocolate pearls on a white plate" fetchpriority="high" decoding="async">
+        </div>
+        <div class="stamp" aria-hidden="true"><div><b>Homemade</b><small>Small batches</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESTSELLERS -->
+  <section class="section" id="favourites" aria-labelledby="fav-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Bestsellers</span>
+        <h2 id="fav-title">Our Customer Favourites</h2>
+        <p>The four things we get asked for most. Tap order and a pre-written WhatsApp message opens, ready to send.</p>
+      </div>
+      <div class="cards">
+        <article class="product">
+          <div class="ph img-box"><img data-img="choc" src="https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 1020px) 270px, (min-width: 560px) 45vw, 90vw" width="800" height="1000" alt="Chocolate bundt cake with glossy glaze" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <h3>Chocolate Fudge Cake</h3>
+            <span class="price">Rs. 1,800</span>
+            <p>Rich, moist chocolate sponge layered with dark fudge ganache. The birthday classic.</p>
+            <a class="btn btn-primary btn-sm" href="#contact" data-wa="product" data-name="Chocolate Fudge Cake" data-price="1,800"><svg aria-hidden="true"><use href="#i-msg"/></svg>Order on WhatsApp</a>
+          </div>
+        </article>
+        <article class="product">
+          <div class="ph img-box"><img data-img="cheese" src="https://images.unsplash.com/photo-1754908886530-2bf8025e860f?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1754908886530-2bf8025e860f?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1754908886530-2bf8025e860f?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1754908886530-2bf8025e860f?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 1020px) 270px, (min-width: 560px) 45vw, 90vw" width="800" height="1000" alt="Creamy cheesecake slice with blueberry compote" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <h3>Lotus Biscoff Cheesecake</h3>
+            <span class="price">Rs. 2,200</span>
+            <p>Silky baked cheesecake on a caramelised biscuit base, finished with a Biscoff drizzle.</p>
+            <a class="btn btn-primary btn-sm" href="#contact" data-wa="product" data-name="Lotus Biscoff Cheesecake" data-price="2,200"><svg aria-hidden="true"><use href="#i-msg"/></svg>Order on WhatsApp</a>
+          </div>
+        </article>
+        <article class="product">
+          <div class="ph img-box"><img data-img="brown" src="https://images.unsplash.com/photo-1717768024023-73768e73f630?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1717768024023-73768e73f630?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1717768024023-73768e73f630?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1717768024023-73768e73f630?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 1020px) 270px, (min-width: 560px) 45vw, 90vw" width="800" height="1000" alt="Fudgy chocolate brownies stacked on a white plate" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <h3>Fudgy Brownies Box</h3>
+            <span class="price">Rs. 950</span>
+            <p>Crackly top, gooey centre. A box of dense, deeply chocolatey brownies made for sharing.</p>
+            <a class="btn btn-primary btn-sm" href="#contact" data-wa="product" data-name="Fudgy Brownies Box" data-price="950"><svg aria-hidden="true"><use href="#i-msg"/></svg>Order on WhatsApp</a>
+          </div>
+        </article>
+        <article class="product">
+          <div class="ph img-box"><img data-img="cup" src="https://images.unsplash.com/photo-1651239062782-80ea6edbf91f?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1651239062782-80ea6edbf91f?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1651239062782-80ea6edbf91f?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1651239062782-80ea6edbf91f?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 1020px) 270px, (min-width: 560px) 45vw, 90vw" width="800" height="1000" alt="Cupcake with white frosting topped with fresh raspberries" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <h3>Vanilla Berry Cupcakes</h3>
+            <span class="price">Rs. 1,200</span>
+            <p>Soft vanilla cupcakes with whipped cream frosting and fresh seasonal berries.</p>
+            <a class="btn btn-primary btn-sm" href="#contact" data-wa="product" data-name="Vanilla Berry Cupcakes" data-price="1,200"><svg aria-hidden="true"><use href="#i-msg"/></svg>Order on WhatsApp</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="section menu-bg" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Our Menu</span>
+        <h2 id="menu-title">Something sweet for every table</h2>
+        <p>Three little corners of the bakery. Ask us for today's flavours and sizes.</p>
+      </div>
+      <div class="cats">
+        <article class="cat">
+          <div class="ph img-box"><img data-img="slice" src="https://images.unsplash.com/photo-1768260731727-275f15ed2556?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1768260731727-275f15ed2556?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1768260731727-275f15ed2556?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1768260731727-275f15ed2556?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 760px) 360px, 90vw" width="800" height="600" alt="Slice of layered chocolate cake with whipped cream and a cherry" loading="lazy" decoding="async"></div>
+          <h3>Signature Cakes</h3>
+          <p>Birthday, anniversary and celebration cakes in chocolate, vanilla, red velvet and seasonal flavours.</p>
+          <a class="link-arrow" href="#contact" data-wa="topic" data-topic="Signature Cakes">Ask about cakes <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="cat">
+          <div class="ph img-box"><img data-img="cheese" src="https://images.unsplash.com/photo-1754908886530-2bf8025e860f?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1754908886530-2bf8025e860f?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1754908886530-2bf8025e860f?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1754908886530-2bf8025e860f?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 760px) 360px, 90vw" width="800" height="600" alt="Cheesecake slice with blueberry compote on a plate" loading="lazy" decoding="async"></div>
+          <h3>Brownies &amp; Desserts</h3>
+          <p>Fudgy brownies, baked cheesecakes and dessert boxes that are easy to gift and easy to share.</p>
+          <a class="link-arrow" href="#contact" data-wa="topic" data-topic="Brownies &amp; Desserts">Ask about desserts <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="cat">
+          <div class="ph img-box"><img data-img="berry" src="https://images.unsplash.com/photo-1570145820404-cf22b115b06f?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1570145820404-cf22b115b06f?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1570145820404-cf22b115b06f?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1570145820404-cf22b115b06f?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 760px) 360px, 90vw" width="800" height="600" alt="Small baked cups topped with fresh raspberries and blueberries" loading="lazy" decoding="async"></div>
+          <h3>Cupcakes &amp; Treats</h3>
+          <p>Cupcake boxes, berry treats and party favours, packed neatly for office trays and small gatherings.</p>
+          <a class="link-arrow" href="#contact" data-wa="topic" data-topic="Cupcakes &amp; Treats">Ask about treats <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM ORDERS -->
+  <section class="section custom" id="custom" aria-labelledby="custom-title">
+    <div class="wrap custom-grid">
+      <div>
+        <span class="eyebrow">Custom orders</span>
+        <h2 id="custom-title">Have Something <em>Special</em> in Mind?</h2>
+        <p>Tell us the occasion and we will design around it. Custom birthday cakes, personalised designs and special occasion desserts are all made to order.</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Birthday and anniversary cakes with your colours and message</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Personalised toppers, themes and flavour combinations</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Dessert tables and gift boxes for weddings, Eid and corporate events</li>
+        </ul>
+        <a class="btn btn-light" href="#contact" data-wa="custom"><svg aria-hidden="true"><use href="#i-msg"/></svg>Enquire on WhatsApp</a>
+      </div>
+      <div class="ph img-box"><img data-img="shop" src="https://images.unsplash.com/photo-1738717088767-8f4c1575d47c?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1738717088767-8f4c1575d47c?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1738717088767-8f4c1575d47c?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1738717088767-8f4c1575d47c?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 900px) 480px, 90vw" width="1000" height="800" alt="Window display of decorated cakes in a bakery shop" loading="lazy" decoding="async"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT / WHY CHOOSE US -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <span class="eyebrow">About us</span>
+        <h2 id="about-title">A small kitchen with big care</h2>
+        <p>THE CAKE ROOM is a home bakery in Karachi. Every order is baked fresh in small batches, so nothing sits on a shelf waiting for you.</p>
+        <p>We keep the menu short and the recipes honest: good butter, real chocolate, and decoration that looks beautiful without being fussy.</p>
+      </div>
+      <div class="benefits" aria-label="Why choose us">
+        <div class="benefit">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-flame"/></svg></div>
+          <h3>Freshly Baked</h3>
+          <p>Baked to order, never the day before. Your cake leaves the oven shortly before it reaches you.</p>
+        </div>
+        <div class="benefit">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-leaf"/></svg></div>
+          <h3>Premium Ingredients</h3>
+          <p>Real butter, quality cocoa, fresh cream and seasonal fruit. No shortcuts, no artificial flavours.</p>
+        </div>
+        <div class="benefit">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-heart"/></svg></div>
+          <h3>Made With Love</h3>
+          <p>Every cake is mixed, baked and decorated by hand, and packed like a gift.</p>
+        </div>
+        <div class="benefit">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-sparkles"/></svg></div>
+          <h3>Custom Designs</h3>
+          <p>Share your idea or a reference photo and we will shape it into a cake that fits your celebration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section menu-bg" id="gallery" aria-labelledby="gal-title" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Gallery</span>
+        <h2 id="gal-title">A peek inside the bakery</h2>
+        <p>Cakes, brownies, cupcakes and the little details in between.</p>
+      </div>
+      <div class="gallery">
+        <figure class="tile wide img-box" style="margin:0"><img data-img="shop" src="https://images.unsplash.com/photo-1738717088767-8f4c1575d47c?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1738717088767-8f4c1575d47c?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1738717088767-8f4c1575d47c?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1738717088767-8f4c1575d47c?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 600px) 50vw, 90vw" width="1000" height="500" alt="Bakery window with a display of decorated cakes" loading="lazy" decoding="async"></figure>
+        <figure class="tile img-box" style="margin:0"><img data-img="brown" src="https://images.unsplash.com/photo-1717768024023-73768e73f630?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1717768024023-73768e73f630?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1717768024023-73768e73f630?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1717768024023-73768e73f630?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 600px) 25vw, 45vw" width="600" height="600" alt="Stack of fudgy chocolate brownies" loading="lazy" decoding="async"></figure>
+        <figure class="tile img-box" style="margin:0"><img data-img="cup" src="https://images.unsplash.com/photo-1651239062782-80ea6edbf91f?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1651239062782-80ea6edbf91f?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1651239062782-80ea6edbf91f?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1651239062782-80ea6edbf91f?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 600px) 25vw, 45vw" width="600" height="600" alt="Cupcake with whipped frosting and raspberries" loading="lazy" decoding="async"></figure>
+        <figure class="tile img-box" style="margin:0"><img data-img="slice" src="https://images.unsplash.com/photo-1768260731727-275f15ed2556?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1768260731727-275f15ed2556?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1768260731727-275f15ed2556?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1768260731727-275f15ed2556?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 600px) 25vw, 45vw" width="600" height="600" alt="Slice of chocolate cake with cream and a cherry" loading="lazy" decoding="async"></figure>
+        <figure class="tile img-box" style="margin:0"><img data-img="berry" src="https://images.unsplash.com/photo-1570145820404-cf22b115b06f?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1570145820404-cf22b115b06f?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1570145820404-cf22b115b06f?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1570145820404-cf22b115b06f?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 600px) 25vw, 45vw" width="600" height="600" alt="Berry-topped baked cups" loading="lazy" decoding="async"></figure>
+        <figure class="tile wide img-box" style="margin:0"><img data-img="choc" src="https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=800" srcset="https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=480 480w, https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=800 800w, https://images.unsplash.com/photo-1618550454160-c69921c2f1a8?auto=format&fit=crop&fm=jpg&q=70&w=1200 1200w" sizes="(min-width: 600px) 50vw, 90vw" width="1000" height="500" alt="Chocolate bundt cake with glaze and chocolate pearls" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="reviews" aria-labelledby="rev-title">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Kind words</span>
+        <h2 id="rev-title">What customers might say</h2>
+      </div>
+      <div class="t-grid">
+        <figure class="quote" style="margin:0">
+          <div class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+          <blockquote>The chocolate fudge cake was the first thing finished at the party. Moist, rich and beautifully packed.</blockquote>
+          <footer><b>Ayesha K.</b><span>DHA, Karachi</span><span class="tag">Sample review</span></footer>
+        </figure>
+        <figure class="quote" style="margin:0">
+          <div class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+          <blockquote>I sent a reference photo for my sister's birthday and the custom cake matched it perfectly. Delivered on time.</blockquote>
+          <footer><b>Hamza R.</b><span>Gulshan-e-Iqbal, Karachi</span><span class="tag">Sample review</span></footer>
+        </figure>
+        <figure class="quote" style="margin:0">
+          <div class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+          <blockquote>Our office ordered brownie boxes for a team lunch. Fudgy, not too sweet, and everyone asked where they came from.</blockquote>
+          <footer><b>Sana M.</b><span>Clifton, Karachi</span><span class="tag">Sample review</span></footer>
+        </figure>
+      </div>
+      <p class="demo-note">These are demo testimonials written for a fictional brand. They are not verified customer reviews.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-bg" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:32px">
+          <span class="eyebrow">Contact</span>
+          <h2 id="contact-title">Let's plan your order</h2>
+        </div>
+        <ul class="contact-list">
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-msg"/></svg></span><div><h3>WhatsApp</h3><a href="#contact" data-wa="general" data-text="number">Message us</a></div></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-insta"/></svg></span><div><h3>Instagram</h3><a href="#contact" data-insta data-text="handle">Follow us</a></div></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><div><h3>Location</h3><p id="location">Karachi, Pakistan</p></div></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><div><h3>Business hours</h3><dl class="hours" id="hours"></dl></div></li>
+        </ul>
+      </div>
+      <div class="cta-card">
+        <h3>Order a cake, brownie box or something custom</h3>
+        <p>Send us the date, the number of guests and any ideas you have. We will reply with options and a price.</p>
+        <a class="btn btn-primary btn-block" href="#contact" data-wa="enquiry"><svg aria-hidden="true"><use href="#i-msg"/></svg>Send an order enquiry</a>
+        <a class="btn btn-ghost btn-block" href="#contact" data-insta><svg aria-hidden="true"><use href="#i-insta"/></svg>See our Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="brand" href="#home">THE <span>CAKE</span> ROOM</a>
+        <p class="about">A Little Happiness in Every Bite. Premium homemade cakes, brownies, cupcakes and custom desserts from Karachi.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Say hello</h3>
+        <ul>
+          <li><a href="#contact" data-wa="general">WhatsApp</a></li>
+          <li><a href="#contact" data-insta>Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; <span id="year">2026</span> THE CAKE ROOM. All rights reserved.</span>
+      <span>Demo website. Photography from Unsplash.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================================
+   SITE SETTINGS: change everything that is client-specific right here.
+   ========================================================================== */
+const CONFIG = {
+  // PLACEHOLDER: replace with the bakery's real WhatsApp number.
+  // International format, digits only, no "+" or spaces. Example for Pakistan: 923XXXXXXXXX
+  whatsappNumber: "923001234567",
+
+  // PLACEHOLDER: replace with the real Instagram username (no @).
+  instagramHandle: "thecakeroom.pk",
+
+  brandName: "THE CAKE ROOM",
+  location: "Karachi, Pakistan",
+
+  // PLACEHOLDER hours: edit freely.
+  hours: [
+    ["Mon to Sat", "11:00 am to 9:00 pm"],
+    ["Sunday", "2:00 pm to 9:00 pm"]
+  ],
+
+  messages: {
+    general:  "Hi THE CAKE ROOM! I'd like to place an order. Could you share today's menu and delivery options in Karachi?",
+    custom:   "Hi THE CAKE ROOM! I'd like a custom cake. The occasion is: ___ . Date needed: ___ . Number of guests: ___ .",
+    enquiry:  "Hi THE CAKE ROOM! I'd like to enquire about an order. Date needed: ___ . What I'm looking for: ___ .",
+    product:  "Hi THE CAKE ROOM! I'd like to order the {name} (Rs. {price}). Is it available, and what are the delivery options in Karachi?",
+    topic:    "Hi THE CAKE ROOM! I'd like to know more about your {topic}. What is available right now?"
+  }
+};
+
+/* ==========================================================================
+   Behaviour. No need to edit below for a new client.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  var waBase = "https://wa.me/" + CONFIG.whatsappNumber.replace(/\D/g, "");
+  var igUrl = "https://www.instagram.com/" + CONFIG.instagramHandle.replace(/^@/, "") + "/";
+
+  function waLink(text) { return waBase + "?text=" + encodeURIComponent(text); }
+  function fill(tpl, data) {
+    return tpl.replace(/\{(\w+)\}/g, function (_, k) { return data[k] != null ? data[k] : ""; });
+  }
+  function decodeEntities(s) { var t = document.createElement("textarea"); t.innerHTML = s; return t.value; }
+  function openExternal(a) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
+
+  // WhatsApp buttons
+  document.querySelectorAll("[data-wa]").forEach(function (a) {
+    var kind = a.getAttribute("data-wa");
+    var tpl = CONFIG.messages[kind] || CONFIG.messages.general;
+    var msg = fill(tpl, {
+      name: a.getAttribute("data-name"),
+      price: a.getAttribute("data-price"),
+      topic: decodeEntities(a.getAttribute("data-topic") || "")
+    });
+    a.href = waLink(msg);
+    openExternal(a);
+    if (a.getAttribute("data-text") === "number") a.textContent = "+" + CONFIG.whatsappNumber.replace(/\D/g, "");
+  });
+
+  // Instagram links
+  document.querySelectorAll("[data-insta]").forEach(function (a) {
+    a.href = igUrl;
+    openExternal(a);
+    if (a.getAttribute("data-text") === "handle") a.textContent = "@" + CONFIG.instagramHandle.replace(/^@/, "");
+  });
+
+  // Location + hours
+  var loc = document.getElementById("location");
+  if (loc) loc.textContent = CONFIG.location;
+  var hours = document.getElementById("hours");
+  if (hours) {
+    CONFIG.hours.forEach(function (row) {
+      var dt = document.createElement("dt"); dt.textContent = row[0];
+      var dd = document.createElement("dd"); dd.textContent = row[1];
+      hours.appendChild(dt); hours.appendChild(dd);
+    });
+  }
+
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Mobile menu
+  var btn = document.getElementById("menuBtn");
+  var drawer = document.getElementById("drawer");
+  function setMenu(open) {
+    drawer.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  btn.addEventListener("click", function () { setMenu(btn.getAttribute("aria-expanded") !== "true"); });
+  drawer.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true") { setMenu(false); btn.focus(); }
+  });
+  window.addEventListener("resize", function () { if (window.innerWidth >= 900) setMenu(false); });
+
+  // Nav shadow + active link
+  var nav = document.getElementById("nav");
+  function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 8); }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  var links = Array.prototype.slice.call(document.querySelectorAll("[data-nav]"));
+  var map = {};
+  links.forEach(function (l) { map[l.getAttribute("href").slice(1)] = l; });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && map[en.target.id]) {
+          links.forEach(function (l) { l.classList.remove("active"); l.removeAttribute("aria-current"); });
+          map[en.target.id].classList.add("active");
+          map[en.target.id].setAttribute("aria-current", "true");
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
+  }
+
+  // Photos that fail to load fall back to a soft tinted block instead of a broken icon
+  document.querySelectorAll("img").forEach(function (img) {
+    var key = img.getAttribute("data-img");
+    var triedLocal = false;
+    function fail() {
+      // First try a local copy in the images/ folder (images/choc.jpg etc.), then give up gracefully
+      if (key && !triedLocal) {
+        triedLocal = true;
+        img.removeAttribute("srcset");
+        img.src = "images/" + key + ".jpg";
+        return;
+      }
+      img.classList.add("img-failed");
+    }
+    img.addEventListener("error", fail);
+    if (img.complete && img.naturalWidth === 0) fail();
+  });
+})();
+</script>
+</body>
+</html>
